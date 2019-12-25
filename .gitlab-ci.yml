@@ -1,0 +1,75 @@
+# Based on https://gitlab.com/mutebg/frontend-ci/blob/master/.gitlab-ci.yml
+
+image: node:10
+
+stages:
+    - install
+    - build
+    - quality
+    - deploy
+    - audit
+
+variables:
+    PROD_URL: "https://"
+
+install:
+    stage: install
+    script:
+        - npm install
+    artifacts:
+        name: "artifacts"
+        untracked: true
+        expire_in: 60 mins
+        paths:
+            - .npm/
+            - node_modules/
+
+build:
+    stage: build
+    script:
+        - CI=false npm run build
+    artifacts:
+        paths:
+            - build
+        expire_in: 60 mins
+    dependencies:
+        - install
+
+test:
+    stage: quality
+    script:
+        - echo "Start tests"
+        - npm run test
+        - echo "End tests"
+    dependencies:
+        - install
+    # coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+
+.deploy:
+    stage: deploy
+    before_script:
+        - echo "Before deploy"
+        - (if [ -d "build" ]; then echo ok; else exit "no build folder, try to run pipeline again"; fi);
+    script:
+        - echo "Deploy"
+        - git init github
+        - cd github
+        - git remote add origin https://$GITHUB_LOGIN:$GITHUB_ACCESS_TOKEN@github.com/$GITHUB_LOGIN/$GITHUB_REPOSITORY
+        - cp -rf ../build/ .
+        - git config user.email $GITHUB_EMAIL
+        - git config --global user.name $GITHUB_USERNAME
+        - git add build/
+        - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
+        - git subtree split --prefix build -b gh-pages
+        - git push -f origin gh-pages:gh-pages
+
+deploy_to_prod:
+    environment:
+        name: prod
+        url: $PROD_URL
+    extends: .deploy
+    variables:
+        ENV: prod
+    only:
+        refs:
+            - master
