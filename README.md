@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![Pipeline Badge](https://gitlab.com/christianmiyoshi/gitlab-ci-cd-mirror/badges/master/pipeline.svg)
 
+Test Pull request integration
+
 ## Available Scripts
 
 In the project directory, you can run:
