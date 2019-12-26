@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![Pipeline Badge](https://gitlab.com/christianmiyoshi/gitlab-ci-cd-mirror/badges/master/pipeline.svg)
+
 ## Available Scripts
 
 In the project directory, you can run:
