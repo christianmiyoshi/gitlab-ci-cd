@@ -10,7 +10,7 @@ stages:
     - audit
 
 variables:
-    PROD_URL: "https://"
+    PROD_URL: ""
 
 install:
     stage: install
