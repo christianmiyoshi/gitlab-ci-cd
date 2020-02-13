@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/gitlab-ci-cd/static/css/main.d1b05096.chunk.css",
+    "main.js": "/gitlab-ci-cd/static/js/main.b54fa653.chunk.js",
+    "main.js.map": "/gitlab-ci-cd/static/js/main.b54fa653.chunk.js.map",
+    "runtime-main.js": "/gitlab-ci-cd/static/js/runtime-main.928c6eed.js",
+    "runtime-main.js.map": "/gitlab-ci-cd/static/js/runtime-main.928c6eed.js.map",
+    "static/js/2.2d09b04f.chunk.js": "/gitlab-ci-cd/static/js/2.2d09b04f.chunk.js",
+    "static/js/2.2d09b04f.chunk.js.map": "/gitlab-ci-cd/static/js/2.2d09b04f.chunk.js.map",
+    "index.html": "/gitlab-ci-cd/index.html",
+    "precache-manifest.34fd7932885b5a26d2d3655e3305f198.js": "/gitlab-ci-cd/precache-manifest.34fd7932885b5a26d2d3655e3305f198.js",
+    "service-worker.js": "/gitlab-ci-cd/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/gitlab-ci-cd/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.2d09b04f.chunk.js.LICENSE": "/gitlab-ci-cd/static/js/2.2d09b04f.chunk.js.LICENSE",
+    "static/media/logo.svg": "/gitlab-ci-cd/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.928c6eed.js",
+    "static/js/2.2d09b04f.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.b54fa653.chunk.js"
+  ]
+}
